@@ -1,6 +1,6 @@
 {
-  "name": "atm-machine",
-  "version": "1.0.0",
+  "name": "555_atm-machine",
+  "version": "3.0.2",
   "description": "this is a CLI based Atm machine working.",
   "main": "index.js",
   "type": "module",

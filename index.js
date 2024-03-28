@@ -1,25 +1,20 @@
 #! /usr/bin/env node
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const inquirer_1 = __importDefault(require("inquirer"));
-const chalk_1 = __importDefault(require("chalk"));
+import inquirer from "inquirer";
+import chalk from "chalk";
 let myBalance = 50000;
 let myPin = 567;
-let pinAns = await inquirer_1.default.prompt({
+let pinAns = await inquirer.prompt({
     name: "pincode",
     type: "number",
     message: "Enter your PIN.",
 });
 if (pinAns.pincode === myPin) {
-    console.log(chalk_1.default.bold.red("Welcome to your account!"));
+    console.log(chalk.bold.red("Welcome to the ATM ! PIN accepted. You can proceed with your transaction"));
 }
 else if (pinAns.pincode !== myPin) {
-    console.log(chalk_1.default.underline.bgRedBright("Incorrect PIN! Please try again."));
+    console.log(chalk.underline.bgRedBright("Incorrect PIN! Please try again."));
 }
-let actionAns = await inquirer_1.default.prompt({
+let actionAns = await inquirer.prompt({
     name: "action",
     message: "please choose an option",
     type: "list",
@@ -29,7 +24,7 @@ if (actionAns.action === "CheckBalance") {
     console.log(`your current balance is: ${myBalance}`);
 }
 else if (actionAns.action === "Withdraw") {
-    let withdrawAmount = await inquirer_1.default.prompt({
+    let withdrawAmount = await inquirer.prompt({
         name: "amount",
         type: "number",
         message: "How much would you like to Withdraw?",
@@ -44,7 +39,7 @@ else if (actionAns.action === "Withdraw") {
     }
 }
 else if (actionAns.action === "FastCash") {
-    let cashAmount = await inquirer_1.default.prompt({
+    let cashAmount = await inquirer.prompt({
         name: "cash",
         type: "list",
         message: "choose your account!",

@@ -6,13 +6,16 @@ import chalk from "chalk";
 let myBalance = 50000;
 let myPin = 567;
 
+
+
 let pinAns = await inquirer.prompt({
   name: "pincode",
   type: "number",
   message: "Enter your PIN.",
 });
+
 if (pinAns.pincode === myPin) {
-  console.log(chalk.bold.red("Welcome to your account!"));
+  console.log(chalk.bold.red("Welcome to the ATM ! PIN accepted. You can proceed with your transaction"));
 }
 else if (pinAns.pincode !== myPin) {
     console.log(chalk.underline.bgRedBright("Incorrect PIN! Please try again."));
